@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0"
+         metadata-complete="true">
+
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:mysql://localhost:3306/mybatis</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>servlet param settings</param-name>
+        <param-value>在其他容器中使用web.xml中嵌入的参数</param-value>
+    </context-param>
+
+
+
+    <servlet>
+        <servlet-name>hello</servlet-name>
+        <servlet-class>com.jinli.servlet.HelloServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>hello</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <!--ServletContext-->
+    <servlet>
+        <servlet-name>GetServlet</servlet-name>
+        <servlet-class>com.jinli.servlet.GetServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetServlet</servlet-name>
+        <url-pattern>/gets</url-pattern>
+    </servlet-mapping>
+
+    <!--SeveletDemo03-->
+    <servlet>
+        <servlet-name>SeveletDemo03</servlet-name>
+        <servlet-class>com.jinli.servlet.ServletDemo03</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SeveletDemo03</servlet-name>
+        <url-pattern>/gets03</url-pattern>
+    </servlet-mapping>
+    <!--请求转发-->
+    <servlet>
+        <servlet-name>SeveletDemo04</servlet-name>
+        <servlet-class>com.jinli.servlet.ServletDemo04</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>SeveletDemo04</servlet-name>
+        <url-pattern>/gets04</url-pattern>
+    </servlet-mapping>
+
+
+    <!--读取配置文件：使用getResourceAsStream(文件流)-->
+    <servlet>
+        <servlet-name>S05</servlet-name>
+        <servlet-class>com.jinli.servlet.Demo05</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>S05</servlet-name>
+        <url-pattern>/s05</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
+
