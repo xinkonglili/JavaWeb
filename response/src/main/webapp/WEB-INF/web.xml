@@ -16,4 +16,55 @@
         <servlet-name>file</servlet-name>
         <url-pattern>/down</url-pattern>
     </servlet-mapping>
+
+
+
+    <servlet>
+        <display-name>UploadServlet</display-name>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>com.jinli.servlet.UploadServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/TomcatTest/UploadServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <display-name>TestJspHttp</display-name>
+        <servlet-name>TestJspHttp</servlet-name>
+        <servlet-class>com.jinli.servlet.TestJspHttp</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TestJspHttp</servlet-name>
+        <url-pattern>/TestJspHttp</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <display-name>TestJspDatabase</display-name>
+        <servlet-name>TestJspDatabase</servlet-name>
+        <servlet-class>com.jinli.servlet.TestJspDatabase</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>TestJspDatabase</servlet-name>
+        <url-pattern>/TestJspDatabase</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <display-name>ImageServlet</display-name>
+        <servlet-name>ImageServlet</servlet-name>
+        <servlet-class>com.jinli.servlet.ImageServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ImageServlet</servlet-name>
+        <url-pattern>/ImageServlet</url-pattern>
+    </servlet-mapping>
+
+
+
 </web-app>

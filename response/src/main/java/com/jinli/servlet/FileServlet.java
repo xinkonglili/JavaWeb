@@ -7,11 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Set;
 
 public class FileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        /*
+        /* ctr+shirt+s -- 录屏
         * 1、要获取下载的文件路径
         * 2、下载的文件名是什么
         * 3、想办法让浏览器能够支持我们需要下载的东西
@@ -24,14 +25,15 @@ public class FileServlet extends HttpServlet {
 
         // Q:为什么打包没有那个路径
 //    ctrl+/                                    * 1、要获取下载的文件路径
-        String realPath = this.getServletContext().getRealPath("/11.jpg");
+        Set<String> resourcePaths = this.getServletContext().getResourcePaths("");
+        String realPath = "D:\\JAVASTUDY\\JavaWeb\\response\\target\\classes\\com\\jinli\\11.jpg";
         System.out.println("Down Path: "+realPath);
 
 //    按住alt不动，实现多行一起写，简直不要太好用了      * 2、下载的文件名是什么
         String filename = realPath.substring(realPath.lastIndexOf("//") + 1);
 
 //    按住alt不动，实现多行一起写，简直不要太好用了      * 3、想办法让浏览器能够支持我们需要下载的东西,固定的上网搜 Content-Disposition  attachment:filename=
-        resp.setHeader("Content-Disposition", "attachment:filename="+filename);
+        resp.setHeader("Content-Disposition", "attachment; filename="+filename);
 
 //    按住alt不动，实现多行一起写，简直不要太好用了      * 4、获取下载文件的输入流 FileInputStream(）
         //读取输入流用in
